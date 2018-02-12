@@ -60,11 +60,9 @@
 
   <div id='content'>
     <div class="grid-container">
-      <div class="grid-item">
         <?php require_once("display.php");
         homeDisplay();
         ?>
-      </div>
     </div>
   </div>
 </div>
