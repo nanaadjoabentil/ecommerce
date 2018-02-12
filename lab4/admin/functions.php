@@ -1,6 +1,8 @@
 <?php
+// include/connect database page to this page
 require_once("database/connect.php");
 
+// function to get and display categories from database
 function displayCategories()
 {
   $connection = new Connect;
@@ -14,7 +16,7 @@ function displayCategories()
    }
 }
 
-
+// function to get and display brands from database
 function displayBrands()
 {
       $connection = new Connect;
@@ -28,11 +30,13 @@ function displayBrands()
        }
 }
 
+// if button had been clicked, run add product function.
 if(isset($_POST['add']))
 {
   addProduct();
 }
 
+// function to add product to the database
 function addProduct()
 {
   $title = $_POST['title'];

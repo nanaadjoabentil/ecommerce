@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+<!-- set html language to english -->
 <html lang="en">
 <header>
+  <!-- include image as header -->
   <img src="../images/stars.jpg" alt="Picture" width="100%" height= "300px">
 </header>
   <head>
+    <!-- include stylesheets and javascript -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -18,8 +21,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+
   <div id='menu' >
     <div class="menu">
+      <!-- links for nav bar -->
     <ul>
       <li><a href="../index.php"> Home </a></li>
       <li><a href="#"> Product </a></li>
@@ -34,14 +40,17 @@
   </div>
   </div>
 
+<!-- div for aspects of the page that will float to the left and right -->
   <div id='floats'>
+    <!-- div for breadcrumbs -->
     <div id='breadcrumb'>
+        <!-- div to position text in breadcrumb -->
       <div class="breadcrumbtext">
         Welcome Admin!
       </div>
     </div>
 
-
+<!-- div for sidebar menu -->
     <div id='sidebar'>
       <div class="sidebartext">
         <br>
@@ -65,11 +74,15 @@
     </div>
   </div>
 
+<!-- div for content aspect of page -->
 <div id="content">
+  <!-- form to add product to database -->
   <form method="POST"  id="form" enctype="multipart/form-data">
+    <!-- require php functions page that has the functions-->
     <?php require_once("functions.php"); ?>
 
   <div class="form-group">
+    <!-- image input type -->
     <label for="image"> Select Product Image to Upload:</label>
     <input type="file" class="form-control" id="fileToUpload" name="fileToUpload" required>
   </div>
@@ -82,6 +95,7 @@
   <div class="form-group">
   <label for="category">Select Category:</label>
   <select class="form-control" id="category" name="category">
+    <!-- require php page with function that displays categories -->
     <?php
       require_once("functions.php");
       displayCategories();
@@ -92,6 +106,7 @@
 <div class="form-group">
 <label for="category">Select Brand:</label>
 <select class="form-control" id="brand" name="brand">
+  <!-- require php page with function that displays brands -->
   <?php
       require_once("functions.php");
       displayBrands();
@@ -119,10 +134,12 @@
 </form>
 </div>
 
+<!-- footer code -->
 <div id='footer'>
   &copy 2018 Liani's Christmas Shop. Powered by Nana Adjoa Bentil
 </div>
 
+<!-- include javascript validation file  -->
 <script type="text/javascript" src="../js/add.js"></script>
 </body>
 </html>
