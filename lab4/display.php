@@ -19,9 +19,9 @@ function homeDisplay()
   {
     // display grid items in grid-item div tag
     echo "<div class=\"grid-item\">";
-    echo "<a href=\"php/view4.php\">" . $results['product_title'] . "</a><br>";
-    echo "<a href=\"php/view4.php\"><img src=".$results['product_image']."></a>"."GHS ". $results['product_price'].".00"."<br>";
-    echo "<a href=\"php/view1.php\">View Product Details </a><br>";
+    echo "<a href=\"php/views.php\">" . $results['product_title'] . "</a><br>";
+    echo "<a href=\"php/views.php\"><img src=".$results['product_image']."></a>"."GHS ". $results['product_price'].".00"."<br>";
+    echo "<a href=\"php/views.php\">View Product Details </a><br>";
     echo "<input type=\"button\" value=\"Add to Cart\">";
     // end loop
     echo "</div>";

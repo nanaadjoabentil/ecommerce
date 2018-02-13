@@ -2,11 +2,11 @@
 <html>
 <header>
   <!-- include image -->
-  <img src="images/stars.jpg" alt="Picture" width= "1278px" height= "300px">
+  <img src="../images/stars.jpg" alt="Picture" width= "1278px" height= "300px">
 </header>
 <head>
   <!-- include stylesheet -->
-  <link rel="stylesheet" type="text/css" href="css/lab2.css">
+  <link rel="stylesheet" type="text/css" href="../css/lab2.css">
   <title></title>
 </head>
 <body>
@@ -35,7 +35,7 @@
     <div class="breadcrumbtext">
       Welcome Guest!
       <!-- make shopping cart image a link -->
-      <a href="#"><img src="images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
+      <a href="#"><img src="../images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
       <a href="#">Go To Cart </a>
     </div>
   </div>
@@ -63,16 +63,16 @@
     </div>
   </div>
 
+
   <div id="content" style="background-color:white">
     <div class="big">
-      <img src="../images/tree.jpg" width="350px" height="350px">
-      <br><BR><Br><br>
+      <img src="../images/shepherdball.jpg" width="350px" height="350px">
+      <br><br><br><br>
         <p>
-        <span id= "itemname"> Christmas Tree <br><br> </span>
-        <span id="price"> Price </span> : GHS 25.00 <BR><BR>
-          <span id="description"> Description </span>: This is a miniature artificial christmas tree with a red bow at the bottom.
-          <br> <br> Suitable for table tops. <br><br>
-          <span id="quantity"> Quantity in Stock </span>: 5 <br><br>
+         <span id= "itemname"> Shepherd Ball<br><br> </span>
+        <span id="price"> Price </span> : GHS 30.00 <BR><BR>
+          <span id="description"> Description </span>: uyftrexjniucrduyg<br><br>
+          <span id="quantity"> Quantity in Stock </span>: 10 <br><br>
           <input type="button" value="Add to Cart">
           <a href="../index.php"><input type="button" value="Return"></a>
   </p>
