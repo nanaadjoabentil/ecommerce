@@ -11,11 +11,19 @@
 </head>
 <body>
 
+  <?php
+  $image = $_GET['image'];
+  $title = $_GET['title'];
+  $price = $_GET['price'];
+  $description = $_GET['description'];
+  ?>
+
+
   <div id='menu'>
     <div class="menu">
       <!-- links for nav bar -->
     <ul>
-      <li><a href="index.php"> Home </a></li>
+      <li><a href="../index.php"> Home </a></li>
       <li><a href="#"> Product </a></li>
       <li><a href="#"> Account </a></li>
       <li><a href="#"> Sign Up </a></li>
@@ -66,12 +74,12 @@
 
   <div id="content" style="background-color:white">
     <div class="big">
-      <img src="../images/shepherdball.jpg" width="350px" height="350px">
-      <br><br><br><br>
+      <img src="../<?php echo $image; ?>" width="350px" height="350px">
         <p>
-         <span id= "itemname"> Shepherd Ball<br><br> </span>
-        <span id="price"> Price </span> : GHS 30.00 <BR><BR>
-          <span id="description"> Description </span>: uyftrexjniucrduyg<br><br>
+          <BR><BR><BR>
+         <span id= "itemname"> <?php echo $title; ?> <br><br><br></span>
+        <span id="price"> Price </span> : GHS <?php echo $price; ?> .00<br><br>
+          <span id="description"> Description </span>: <?php echo $description; ?> <br><br>
           <span id="quantity"> Quantity in Stock </span>: 10 <br><br>
           <input type="button" value="Add to Cart">
           <a href="../index.php"><input type="button" value="Return"></a>

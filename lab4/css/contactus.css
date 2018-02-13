@@ -105,11 +105,21 @@ body
   padding: 20px;
 }
 
-.breadcrumbcart
+/* .breadcrumbcart
 {
   display: inline;
   margin-left: 40px;
   margin-top: 40px;
+} */
+
+.breadcrumbtext a
+{
+  margin-left: 30px;
+}
+
+.breadcrumbtext img
+{
+  margin-left: 40px;
 }
 
 .grid-container {

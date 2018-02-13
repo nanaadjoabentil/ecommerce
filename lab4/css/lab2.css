@@ -144,6 +144,11 @@ body
   height: 100px;
 }
 
+.grid-item input
+{
+  float: right;
+}
+
 .sidebartext ul
 {
   list-style-type: none;
