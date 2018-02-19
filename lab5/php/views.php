@@ -26,13 +26,11 @@
       <form method="POST">
         <?php include("productFunctions.php"); ?>
       <li><a href="../index.php"> Home </a></li>
-      <li><a href="#"> Product </a></li>
+      <li><a href="products.php"> Product </a></li>
       <li><a href="#"> Account </a></li>
       <li><a href="#"> Sign Up </a></li>
       <li><a href="#"> Shopping Cart </a></li>
       <li><a href="php/contactus.php"> Contact Us </a></li>
-      <li><input type="search" placeholder="Search by name" name="searchitem"></li>
-      <li><input type="submit" name="searchbutton"></li>
     </ul>
   </form>
   </div>
