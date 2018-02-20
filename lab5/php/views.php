@@ -11,6 +11,7 @@
 </head>
 <body>
 
+<?php include("productFunctions.php"); ?>
   <?php
   $image = $_GET['image'];
   $title = $_GET['title'];
@@ -24,13 +25,15 @@
       <!-- links for nav bar -->
     <ul>
       <form method="POST">
-        <?php include("productFunctions.php"); ?>
+
       <li><a href="../index.php"> Home </a></li>
       <li><a href="products.php"> Product </a></li>
       <li><a href="#"> Account </a></li>
       <li><a href="#"> Sign Up </a></li>
       <li><a href="#"> Shopping Cart </a></li>
       <li><a href="php/contactus.php"> Contact Us </a></li>
+      <li><input type="text" placeholder="Search by keywords" name="searchitem"></li>
+      <li><input type="submit" name="searchbutton"></li>
     </ul>
   </form>
   </div>
@@ -78,26 +81,27 @@
 
 
   <div id="content" style="background-color:white">
-    <div class="big">
-      <!-- make image display bigger, get it from php  -->
-      <img src="../<?php echo $image; ?>" width="350px" height="350px">
-        <p>
-          <BR><BR><BR>
-            <!-- getting other elements (title, description) from php -->
-         <span id= "itemname"> <?php echo $title; ?> <br><br></span>
-        <span id="price"> Price </span> : GHS <?php echo $price; ?>.00<br><br>
-          <span id="description"> Description </span>: <?php echo $description; ?> <br><br>
-          <span id="quantity"> Quantity in Stock </span>: 10 <br><br>
-          <input type="button" value="Add to Cart">
-          <a href="../index.php"><input type="button" value="Return"></a>
-  </p>
 
     <?php
     if (isset($_POST['searchbutton']) && !empty($_POST['searchitem']))
     {
+      echo "<div class=\"grid-container\" style=\"background-color:black\">";
       search();
     }
-    // o
+    else
+    echo '
+    <div class="big">
+      <img src="../' .$image. '" width="350px" height="350px">
+        <p>
+          <BR><BR><BR>
+         <span id= "itemname">' .$title. '<br><br></span>
+        <span id="price"> Price </span> : GHS ' .$price. '.00<br><br>
+          <span id="description"> Description </span>:' .$description. '<br><br>
+          <span id="quantity"> Quantity in Stock </span>: 10 <br><br>
+          <span id="quantity"> Quantity </span>: <input type="number" min="1" max="10" placeholder="1"> <br><br>
+          <input type="button" value="Add to Cart">
+          <a href="../index.php"><input type="button" value="Return"></a>
+  </p>'
      ?>
 
     </div>

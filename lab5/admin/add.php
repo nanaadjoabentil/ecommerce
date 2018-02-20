@@ -34,8 +34,6 @@
       <li><a href="#"> Shopping Cart </a></li>
       <li><a href="../php/contactus.php"> Contact Us </a></li>
       <li><a href="add.php"> Add New Product </a></li>
-      <li><input type="search" placeholder="Search by name"></li>
-      <li><input type="submit"></li>
     </ul>
   </div>
   </div>
