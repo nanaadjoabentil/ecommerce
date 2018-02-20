@@ -56,7 +56,11 @@
             <li><a href="#">Candles</a></li><br>
             <li><a href="#">Cards</a></li><br>
             <li><a href="#">Candy Canes</a></li><br>
-            <li><a href="#">Angels</a></li>
+            <li><a href="#">Angels</a></li><br>
+            <li><a href="#">Tinsels</a></li><br>
+            <li><a href="#">Hangings</a></li><br>
+            <li><a href="#">Wreaths</a></li><br>
+            <li><a href="#">Tree Ornaments</a></li>
         </ul>
 
         <p id="top"> Brands: </p>
@@ -83,7 +87,7 @@
         // otherwise, display all products
         else
         {
-            homeDisplay();
+            allproducts();
         }
         ?>
     </div>

@@ -134,7 +134,7 @@ footer
 .grid-item {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 25px;
+  padding: 20px;
   font-size: 30px;
   text-align: right;
   color: black;
@@ -142,10 +142,12 @@ footer
 
 .grid-item a{
   font-size: 45%;
+  margin-left: -50px;
 }
 
 .grid-item p{
-  font-size: 25%;
+  margin-top: -25px;
+  font-size: 65%;
 }
 
 .grid-item img{
@@ -157,6 +159,7 @@ footer
 .grid-item input
 {
   float: right;
+  margin-top: -30px;
 }
 
 .sidebartext ul

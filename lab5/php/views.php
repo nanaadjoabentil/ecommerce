@@ -60,7 +60,11 @@
               <li><a href="#">Candles</a></li><br>
               <li><a href="#">Cards</a></li><br>
               <li><a href="#">Candy Canes</a></li><br>
-              <li><a href="#">Angels</a></li>
+              <li><a href="#">Angels</a></li><br>
+              <li><a href="#">Tinsels</a></li><br>
+              <li><a href="#">Hangings</a></li><br>
+              <li><a href="#">Wreaths</a></li><br>
+              <li><a href="#">Tree Ornaments</a></li>
           </ul>
 
           <p id="top"> Brands: </p>
@@ -80,8 +84,8 @@
         <p>
           <BR><BR><BR>
             <!-- getting other elements (title, description) from php -->
-         <span id= "itemname"> <?php echo $title; ?> <br><br><br></span>
-        <span id="price"> Price </span> : GHS <?php echo $price; ?> .00<br><br>
+         <span id= "itemname"> <?php echo $title; ?> <br><br></span>
+        <span id="price"> Price </span> : GHS <?php echo $price; ?>.00<br><br>
           <span id="description"> Description </span>: <?php echo $description; ?> <br><br>
           <span id="quantity"> Quantity in Stock </span>: 10 <br><br>
           <input type="button" value="Add to Cart">

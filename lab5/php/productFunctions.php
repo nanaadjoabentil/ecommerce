@@ -22,7 +22,7 @@ function allproducts()
           <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc'].'"><img src="../'.$row['product_image'].'"></a><br>
           <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '" >' .$row['product_title']. '</a><br>
 
-            '.'GHS ' .$row['product_price'].'.00'.'  <br>
+            '.'<p>GHS ' .$row['product_price'].'.00</p>'.'  <br>
             <input type="button" value="Add to Cart">
         </div>';
 }
@@ -47,7 +47,7 @@ function search()
             <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc'].'"><img src="../'.$row['product_image'].'"></a><br>
             <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '">' .$row['product_title']. '</a><br>
 
-              <h3>'.'GHS ' .$row['product_price'].'.00'.'  <br> </h3>
+              '.'<p>GHS ' .$row['product_price'].'.00</p>'.'  <br> 
               <input type="button" value="Add to Cart">
           </div>';
     }

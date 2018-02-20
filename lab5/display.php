@@ -3,7 +3,7 @@
 require_once("admin/database/connect.php");
 
 // new function that displays products on the homepage
-function homeDisplay()
+function allproducts()
 {
   // write wqery
   $sql = "SELECT product_image,product_title,product_price,product_desc FROM products ORDER BY RAND()"; //random selection order each time.
@@ -20,13 +20,13 @@ function homeDisplay()
     // // display grid items in grid-item div tag
 
     echo '<div class="grid-item">
-          <a href=" php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc'].'"><img src="'.$row['product_image'].'"></a>
+          <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc'].'"><img src="'.$row['product_image'].'"></a><br>
           <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '" >' .$row['product_title']. '</a><br>
 
-            '.'GHS ' .$row['product_price'].'.00'.'  
+            '.'<p>GHS ' .$row['product_price'].'.00</p>'.'  <br>
             <input type="button" value="Add to Cart">
         </div>';
-  }
+}
 }
 
 // function that searches through database for items and displays them
@@ -51,7 +51,7 @@ function search()
             <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc'].'"><img src="'.$row['product_image'].'"></a><br>
             <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '">' .$row['product_title']. '</a><br>
 
-              <h3>'.'GHS ' .$row['product_price'].'.00'.'  <br> </h3>
+              '.'<p>GHS ' .$row['product_price'].'.00</p>'.'  <br>
               <input type="button" value="Add to Cart">
           </div>';
     }
