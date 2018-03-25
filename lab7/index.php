@@ -2,28 +2,29 @@
 <html>
 <header>
   <!-- include image -->
-  <img src="../images/stars.jpg" alt="Picture" width= "1278px" height= "300px">
+  <img src="images/stars.jpg" alt="Picture" width= "1278px" height= "300px">
 </header>
 <head>
   <!-- include stylesheet -->
-  <link rel="stylesheet" type="text/css" href="../css/lab2.css">
-  <title>All Products</title>
+  <link rel="stylesheet" type="text/css" href="css/lab2.css">
+  <title></title>
 </head>
 <body>
-  <?php require_once("productFunctions.php"); ?>
+
   <div id='menu'>
     <div class="menu">
       <!-- links for nav bar -->
       <form method="POST">
     <ul>
-      <li><a href="../index.php"> Home </a></li>
-      <li><a href="products.php"> Product </a></li>
+      <li><a href="index.php"> Home </a></li>
+      <li><a href="php/products.php"> Product </a></li>
       <li><a href="#"> Account </a></li>
       <li><a href="#"> Sign Up </a></li>
-      <li><a href="#"> Shopping Cart </a></li>
-      <li><a href="contactus.php"> Contact Us </a></li>
+      <li><a href="php/cart.php"> Shopping Cart </a></li>
+      <li><a href="php/contactus.php"> Contact Us </a></li>
 
-      <li><input type="text" placeholder="Search by keywords" name="searchitem"></li>
+        <?php include("display.php"); ?>
+      <li><input type="search" placeholder="Search by name" name="searchitem"></li>
       <li><input type="submit" name="searchbutton"></li>
     </form>
     </ul>
@@ -36,15 +37,13 @@
   <div id='breadcrumb'>
     <!-- div to position text in breadcrumb -->
     <div class="breadcrumbtext">
-      
       <?php
-      require_once('productFunctions.php');
-      num();
-      ?>
-
+      require_once('display.php');
+        num();
+        ?>
       <!-- make shopping cart image a link -->
-      <a href="#"><img src="../images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
-      <a href="#">Go To Cart </a>
+      <a href="php/cart.php"><img src="images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
+      <a href="php/cart.php">Go To Cart </a>
     </div>
   </div>
 
@@ -52,8 +51,8 @@
   <div id='sidebar'>
     <div class="sidebartext">
       <br>
-      <!-- show categories and brands in list format -->
       <p id="top"> Categories: </p>
+      <!-- display categories in list format -->
           <ul>
             <li><a href="#">Christmas trees</a></li><br>
             <li><a href="#">Christmas balls</a></li><br>
@@ -81,8 +80,9 @@
     <!-- div for grid -->
     <div class="grid-container">
       <!-- require php page with function that displays grid items  -->
-        <?php require_once("productFunctions.php");
-        // check if search button has been clicked. if yes, and search bar is not empty, search
+        <?php require_once("display.php");
+
+        // check if search button has been clicked and search bar is not empty. if not, search.
         if (isset($_POST['searchbutton']) && !empty($_POST['searchitem']))
         {
           search();
@@ -90,7 +90,7 @@
         // otherwise, display all products
         else
         {
-          allproducts();
+            allproducts();
         }
         ?>
     </div>

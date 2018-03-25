@@ -7,7 +7,7 @@
 <head>
   <!-- include stylesheet -->
   <link rel="stylesheet" type="text/css" href="../css/lab2.css">
-  <title>All Products</title>
+  <title>Cart</title>
 </head>
 <body>
   <?php require_once("productFunctions.php"); ?>
@@ -20,7 +20,7 @@
       <li><a href="products.php"> Product </a></li>
       <li><a href="#"> Account </a></li>
       <li><a href="#"> Sign Up </a></li>
-      <li><a href="#"> Shopping Cart </a></li>
+      <li><a href="cart.php"> Shopping Cart </a></li>
       <li><a href="contactus.php"> Contact Us </a></li>
 
       <li><input type="text" placeholder="Search by keywords" name="searchitem"></li>
@@ -36,15 +36,14 @@
   <div id='breadcrumb'>
     <!-- div to position text in breadcrumb -->
     <div class="breadcrumbtext">
-      
+
       <?php
       require_once('productFunctions.php');
       num();
       ?>
-
       <!-- make shopping cart image a link -->
-      <a href="#"><img src="../images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
-      <a href="#">Go To Cart </a>
+      <a href="cart.php"><img src="../images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
+      <a href="../index.php">Continue Shopping </a>
     </div>
   </div>
 
@@ -82,17 +81,19 @@
     <div class="grid-container">
       <!-- require php page with function that displays grid items  -->
         <?php require_once("productFunctions.php");
-        // check if search button has been clicked. if yes, and search bar is not empty, search
-        if (isset($_POST['searchbutton']) && !empty($_POST['searchitem']))
-        {
-          search();
-        }
-        // otherwise, display all products
-        else
-        {
-          allproducts();
-        }
-        ?>
+        // // check if search button has been clicked. if yes, and search bar is not empty, search
+        // if (isset($_POST['searchbutton']) && !empty($_POST['searchitem']))
+        // {
+        //   search();
+        // }
+        // // otherwise, display all products
+        // else
+        // {
+        //   allproducts();
+        // }
+
+        viewCart();
+        // ?>
     </div>
   </div>
 </div>

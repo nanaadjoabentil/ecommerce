@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <header>
-  <!-- include image -->
+  <!-- include header image -->
   <img src="../images/stars.jpg" alt="Picture" width= "1278px" height= "300px">
 </header>
 <head>
   <!-- include stylesheet -->
   <link rel="stylesheet" type="text/css" href="../css/lab2.css">
-  <title>All Products</title>
+  <title></title>
 </head>
 <body>
-  <?php require_once("productFunctions.php"); ?>
-  <div id='menu'>
+  <!-- <div id='header'>
+    Header
+  </div> -->
+
+  <div id='menu' >
     <div class="menu">
-      <!-- links for nav bar -->
-      <form method="POST">
     <ul>
+      <form method="POST">
+        <?php include("productFunctions.php"); ?>
       <li><a href="../index.php"> Home </a></li>
-      <li><a href="products.php"> Product </a></li>
+      <li><a href="#"> Product </a></li>
       <li><a href="#"> Account </a></li>
       <li><a href="#"> Sign Up </a></li>
       <li><a href="#"> Shopping Cart </a></li>
       <li><a href="contactus.php"> Contact Us </a></li>
-
-      <li><input type="text" placeholder="Search by keywords" name="searchitem"></li>
+      <li><input type="search" placeholder="Search by name" name="searchitem"></li>
       <li><input type="submit" name="searchbutton"></li>
     </form>
     </ul>
@@ -36,11 +38,8 @@
   <div id='breadcrumb'>
     <!-- div to position text in breadcrumb -->
     <div class="breadcrumbtext">
-      
-      <?php
-      require_once('productFunctions.php');
-      num();
-      ?>
+      <?php require_once('productFunctions.php'); ?>
+      Welcome Guest! &nbsp&nbsp&nbsp Total Items: <?php echo $count; ?> &nbsp&nbsp&nbsp Total Price: GHS <?php echo $totalPrice; ?>
 
       <!-- make shopping cart image a link -->
       <a href="#"><img src="../images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
@@ -77,29 +76,18 @@
 </div>
 
 <!-- div for content aspect of page -->
-  <div id='content'>
-    <!-- div for grid -->
-    <div class="grid-container">
-      <!-- require php page with function that displays grid items  -->
-        <?php require_once("productFunctions.php");
-        // check if search button has been clicked. if yes, and search bar is not empty, search
-        if (isset($_POST['searchbutton']) && !empty($_POST['searchitem']))
-        {
-          search();
-        }
-        // otherwise, display all products
-        else
-        {
-          allproducts();
-        }
-        ?>
-    </div>
-  </div>
+<div id="content">
+  <br><br><br><br><br><br><br>
+    You can reach us through our email: lianichristmas@outlook.com
+    <br><br>
+    Or, you can come by and visit our shops in Accra Central, Cantonments and Tema.
+    <br><br><br><br><br><br><br><BR><br><br>
 </div>
 
-  <!-- <div id='footer'>
+<!-- footer -->
+  <div id='footer'>
     &copy 2018 Liani's Christmas Shop. Powered by Nana Adjoa Bentil
-  </div> -->
+  </div>
 
 </body>
 </html>

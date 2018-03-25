@@ -20,7 +20,7 @@
       <li><a href="products.php"> Product </a></li>
       <li><a href="#"> Account </a></li>
       <li><a href="#"> Sign Up </a></li>
-      <li><a href="#"> Shopping Cart </a></li>
+      <li><a href="cart.php"> Shopping Cart </a></li>
       <li><a href="contactus.php"> Contact Us </a></li>
 
       <li><input type="text" placeholder="Search by keywords" name="searchitem"></li>
@@ -36,15 +36,15 @@
   <div id='breadcrumb'>
     <!-- div to position text in breadcrumb -->
     <div class="breadcrumbtext">
-      
+
       <?php
       require_once('productFunctions.php');
       num();
       ?>
 
       <!-- make shopping cart image a link -->
-      <a href="#"><img src="../images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
-      <a href="#">Go To Cart </a>
+      <a href="cart.php"><img src="../images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
+      <a href="cart.php">Go To Cart </a>
     </div>
   </div>
 

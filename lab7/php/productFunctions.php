@@ -36,7 +36,7 @@ function search()
 {
   $searchitem = $_POST['searchitem'];
 
-  $sql = "SELECT product_title, product_image, product_price, product_desc FROM products WHERE product_keywords LIKE '%$searchitem%'";
+  $sql = "SELECT product_id,product_title, product_image, product_price, product_desc FROM products WHERE product_keywords LIKE '%$searchitem%'";
 
   $login =  new Connect;
 
@@ -97,14 +97,14 @@ function addtocart()
 
     $run = $login->query($sql2);
 
-    if ($run)
-    {
-      echo "Successfully added to cart";
-    }
-    else
-    {
-      echo "Could not add to cart";
-    }
+  //   if ($run)
+  //   {
+  //     echo "Successfully added to cart";
+  //   }
+  //   else
+  //   {
+  //     echo "Could not add to cart";
+  //   }
   }
 }
 
@@ -154,6 +154,66 @@ function num()
     }
     echo "Welcome Guest! &nbsp&nbsp&nbsp Total Items: " . $count . "&nbsp&nbsp&nbsp Total Price: GHS ". $bill. ".00";
   }
+}
+
+function viewCart()
+{
+  $ip = $_SERVER["REMOTE_ADDR"];
+
+  //get product details from Cart
+  $sql = "SELECT p_id, qty FROM cart WHERE ip_add = '$ip'";
+
+  $login = new Connect;
+
+  $run = $login->query($sql);
+
+  while ($results = $login->fetch())
+  {
+    //set item id to variable
+    $id = $results['p_id'];
+    $qty = $results['qty'];
+
+    //get item name, picture, price
+    $sql2 = "SELECT product_title, product_price, product_image FROM products WHERE product_id = '$id'";
+
+    $login2 = new Connect;
+
+    $run2 = $login2->query($sql2);
+
+    while ($row = $login2->fetch())
+    {
+      echo '
+      <form method="post">
+        <div class="grid-item">
+            <a href="views.php"><img src="../'.$row['product_image'].'"></a><br>
+            <a href="views.php">' .$row['product_title']. '</a><br><br>
+            <p>Quantity = '.$qty.'</p>
+              '.'<p>Unit price = GHS ' .$row['product_price'].'.00</p>'.'  <br>
+              <p>Total Price = GHS '.$row['product_price'] * $qty.'.00</p>
+              <button value="'.$id.'" name="deletecart">Remove from Cart </button>
+          </div>
+  </form>';
+    }
+  }
+}
+
+if (isset($_POST['deletecart']))
+{
+  deleteCart();
+}
+
+//function to remove item from cart
+function deleteCart()
+{
+  $id = $_POST['deletecart'];
+  $ip = $_SERVER["REMOTE_ADDR"];
+
+  $sql = "DELETE FROM cart WHERE p_id = '$id' AND ip_add = '$ip'";
+
+  $login = new Connect();
+
+  $run = $login->query($sql);
+
 }
 
 ?>

@@ -37,8 +37,10 @@
   <div id='breadcrumb'>
     <!-- div to position text in breadcrumb -->
     <div class="breadcrumbtext">
-      <?php require_once('display.php'); ?>
-      Welcome Guest! &nbsp&nbsp&nbsp Total Items: <?php echo $count; ?> &nbsp&nbsp&nbsp Total Price: GHS <?php echo $totalPrice; ?>
+      <?php
+      require_once('display.php');
+        num();
+        ?>
       <!-- make shopping cart image a link -->
       <a href="#"><img src="images/shopping-cart.png" alt="Cart" width="25px" height="25px"></a>
       <a href="#">Go To Cart </a>

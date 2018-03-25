@@ -1,11 +1,12 @@
 <?php
 // include database file
-require_once("../admin/database/connect.php");
+require_once("admin/database/connect.php");
 
+// new function that displays products on the homepage
 function allproducts()
 {
-  // write query
-  $sql = "SELECT product_id, product_image,product_title,product_price,product_desc FROM products ORDER BY RAND()"; //random selection order each time.
+  // write wqery
+  $sql = "SELECT product_id,product_image,product_title,product_price,product_desc FROM products ORDER BY RAND()"; //random selection order each time.
 
   // create new instance of database
   $connect = new Connect;
@@ -19,23 +20,25 @@ function allproducts()
     // // display grid items in grid-item div tag
 
     echo '
-    <form method = "post">
+    <form method="post">
       <div class="grid-item">
-          <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id'].'"><img src="../'.$row['product_image'].'"></a><br>
-          <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id']. '" >' .$row['product_title']. '</a><br>
+          <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id'].'"><img src="'.$row['product_image'].'"></a><br>
+          <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id'].'" >' .$row['product_title']. '</a><br>
 
             '.'<p>GHS ' .$row['product_price'].'.00</p>'.'  <br>
-            <button value="'.$row['product_id'].'" name="cart">Add to Cart</button>
+            <button value="'.$row['product_id'].'" name="cart">Add to Cart </button>
         </div>
-    </form>';
+  </form>';
 }
 }
 
-// function to search through database for search results
+// function that searches through database for items and displays them
 function search()
 {
+  // get search bar input and store in variable called searchitem
   $searchitem = $_POST['searchitem'];
 
+  // sql query to get information about search results
   $sql = "SELECT product_title, product_image, product_price, product_desc FROM products WHERE product_keywords LIKE '%$searchitem%'";
 
   $login =  new Connect;
@@ -46,21 +49,21 @@ function search()
   {
     while ($row = $login->fetch())
     {
+      // display search results in grid format
       echo '
-      <form method="post">
         <div class="grid-item">
-            <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id'].'"><img src="../'.$row['product_image'].'"></a><br>
-            <a href="views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id']. '">' .$row['product_title']. '</a><br>
+            <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id'].'"><img src="'.$row['product_image'].'"></a><br>
+            <a href="php/views.php?image='.$row['product_image']. '&title='.$row['product_title']. '&price='.$row['product_price']. '&description='.$row['product_desc']. '&id='.$row['product_id']. '">' .$row['product_title']. '</a><br>
 
               '.'<p>GHS ' .$row['product_price'].'.00</p>'.'  <br>
               <button value="'.$row['product_id'].'" name="cart">Add to Cart </button>
           </div>
-      </form>';
+        ';
     }
   }
   else
   {
-    echo "Could not search.";
+    echo "No results found.";
   }
 }
 
@@ -97,14 +100,14 @@ function addtocart()
 
     $run = $login->query($sql2);
 
-    if ($run)
-    {
-      echo "Successfully added to cart";
-    }
-    else
-    {
-      echo "Could not add to cart";
-    }
+    // if ($run)
+    // {
+    //   echo "Successfully added to cart";
+    // }
+    // else
+    // {
+    //   echo "Could not add to cart";
+    // }
   }
 }
 
@@ -155,5 +158,6 @@ function num()
     echo "Welcome Guest! &nbsp&nbsp&nbsp Total Items: " . $count . "&nbsp&nbsp&nbsp Total Price: GHS ". $bill. ".00";
   }
 }
+
 
 ?>
