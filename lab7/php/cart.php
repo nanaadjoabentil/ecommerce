@@ -81,17 +81,6 @@
     <div class="grid-container">
       <!-- require php page with function that displays grid items  -->
         <?php require_once("productFunctions.php");
-        // // check if search button has been clicked. if yes, and search bar is not empty, search
-        // if (isset($_POST['searchbutton']) && !empty($_POST['searchitem']))
-        // {
-        //   search();
-        // }
-        // // otherwise, display all products
-        // else
-        // {
-        //   allproducts();
-        // }
-
         viewCart();
         // ?>
     </div>

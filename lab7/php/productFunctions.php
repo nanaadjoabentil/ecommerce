@@ -156,6 +156,7 @@ function num()
   }
 }
 
+//function to get items from cart
 function viewCart()
 {
   $ip = $_SERVER["REMOTE_ADDR"];
@@ -182,12 +183,15 @@ function viewCart()
 
     while ($row = $login2->fetch())
     {
+      //display cart items in grid form
       echo '
       <form method="post">
         <div class="grid-item">
             <a href="views.php"><img src="../'.$row['product_image'].'"></a><br>
             <a href="views.php">' .$row['product_title']. '</a><br><br>
-            <p>Quantity = '.$qty.'</p>
+            <p>Quantity = <br><br><br>
+            <input type="number" min="1" value='.$qty.' style="width:30px;" name="number">
+            <button name="updatebutton" value='.$id.'>Update</button></p>
               '.'<p>Unit price = GHS ' .$row['product_price'].'.00</p>'.'  <br>
               <p>Total Price = GHS '.$row['product_price'] * $qty.'.00</p>
               <button value="'.$id.'" name="deletecart">Remove from Cart </button>
@@ -216,4 +220,22 @@ function deleteCart()
 
 }
 
+
+if(isset($_POST['updatebutton']) && !empty($_POST['number']))
+{
+  updateQuantity();
+}
+
+function updateQuantity()
+{
+  $quantity = $_POST['number'];
+  $id = $_POST['updatebutton'];
+  $ip = $_SERVER['REMOTE_ADDR'];
+
+  $sql = "UPDATE cart SET qty = '$quantity' WHERE p_id = '$id' AND ip_add = '$ip'";
+
+  $login = new Connect;
+
+  $run = $login->query($sql);
+}
 ?>
