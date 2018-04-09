@@ -24,6 +24,18 @@
       <li><a href="php/contactus.php"> Contact Us </a></li>
       <li><a href="php/login.php"> Login </a></li>
       <li><a href="php/logout.php"> Logout</a></li>
+      <!-- <!?php
+      // require_once("display.php");
+      // session_start();
+      // if (!empty($_SESSION['login']))
+      {
+        // echo '<li><a href="php/logout.php">Logout</a></li>';
+      }
+      // else
+      {
+        // echo '<li><a href="php/login.php">Login</a></li>';
+      }
+      ?-->
       <li><input type="search" placeholder="Search by name" name="searchitem"></li>
       <li><input type="submit" name="searchbutton"></li>
     </form>
