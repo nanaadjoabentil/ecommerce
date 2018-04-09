@@ -22,9 +22,8 @@
       <li><a href="register.php"> Sign Up </a></li>
       <li><a href="cart.php"> Shopping Cart </a></li>
       <li><a href="contactus.php"> Contact Us </a></li>
-
-
-
+      <li><a href="php/login.php"> Login </a></li>
+      <li><a href="php/logout.php"> Logout</a></li>
       <li><input type="text" placeholder="Search by keywords" name="searchitem"></li>
       <li><input type="submit" name="searchbutton"></li>
     </form>

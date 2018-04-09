@@ -34,6 +34,8 @@
       <li><a href="#"> Shopping Cart </a></li>
       <li><a href="../php/contactus.php"> Contact Us </a></li>
       <li><a href="add.php"> Add New Product </a></li>
+      <li><a href="php/login.php"> Login </a></li>
+      <li><a href="php/logout.php"> Logout</a></li>
     </ul>
   </div>
   </div>

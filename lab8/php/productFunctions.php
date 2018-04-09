@@ -278,7 +278,7 @@ function registerUser()
   $image = "images/" . $_FILES["fileToUpload"]["name"];
 
   $nameCheck = '/^([a-zA-Z\' -]+)(\s)?([a-z\' -]*)/';
-  $emailCheck = '/[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+.*[a-zA-Z]{6,}+$/';
+  $emailCheck = "/[a-zA-Z 0-9.-]+@+[a-zA-Z]+[.][a-zA-Z -.]*/";
   $passwordCheck = '/([a-zA-Z0-9*!@#$%^&*()_+{}|:"\'<?>;.,\/=-`~]*)/';
   $countryCheck = '/[a-zA-Z\' ]*/';
   $cityCheck = '/[a-zA-Z\' ,-]*/';
@@ -289,10 +289,10 @@ function registerUser()
   {
     echo "Please enter a valid name";
   }
-  // else if (preg_match($emailCheck, $email) == 0)
-  // {
-  //   echo "Please enter a valid email";
-  // }
+  else if (preg_match($emailCheck, $email) == 0)
+  {
+    echo "Please enter a valid email";
+  }
   else if(preg_match($passwordCheck, $password) == 0)
   {
     echo "Please enter a valid password";
@@ -324,7 +324,7 @@ function registerUser()
 
     if ($run)
     {
-      header("location: cart.php");
+      header("location: login.php");
     }
     else
     {
@@ -342,6 +342,18 @@ function validatelogin()
 {
   $email = $_POST['email'];
   $password = $_POST['password'];
+
+  $emailCheck = "/[a-zA-Z 0-9.-]+@+[a-zA-Z]+[.][a-zA-Z -.]*/";
+  $passwordCheck = '/([a-zA-Z0-9*!@#$%^&*()_+{}|:"\'<?>;.,\/=-`~]*)/';
+
+  if (preg_match($emailCheck, $email) == 0)
+  {
+    echo "Please enter a valid email";
+  }
+  else if(preg_match($passwordCheck, $password) == 0)
+  {
+    echo "Please enter a valid password";
+  }
 
   $sql = "SELECT customer_id, customer_name FROM customer WHERE customer_email = '$email' AND customer_pass = '$password'";
 
