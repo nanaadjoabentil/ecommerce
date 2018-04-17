@@ -365,7 +365,7 @@ function validatelogin()
 
   if ($results)
   {
-    session_start();
+    // session_start();
     $_SESSION['id'] = $results['customer_id'];
     $_SESSION['name'] = $results['customer_name'];
     $_SESSION['login'] = true;
